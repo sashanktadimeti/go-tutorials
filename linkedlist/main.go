@@ -11,8 +11,24 @@ func (ll *LinkedList) PrintList(){
 	fmt.Println(ll.value)
 	ll.next.PrintList()
 }
+func(ll *LinkedList) sum() int{
+	if ll == nil {
+		return 0
+	}
+	return ll.value + ll.next.sum()
+}
 func main() {
 	fmt.Println("This is a placeholder main function.")
+	node1 := new(LinkedList)
+	node1.value = 10
+	node2 := new(LinkedList)
+	node2.value = 20
+	node3 := new (LinkedList)
+	node3.value = 30
+	node1.next = node2
+	node2.next = node3
+	node1.PrintList()
+	fmt.Println("Sum:", node1.sum())
 }
 
 // Nothing in Go prevents calling a method with nil receiver.
