@@ -32,3 +32,4 @@ func main() {
 }
 
 // Nothing in Go prevents calling a method with nil receiver.
+// In this example, we define a simple singly linked list structure with methods to print the list and calculate the sum of its values. The PrintList and sum methods handle nil receivers gracefully, allowing for safe traversal of the list even when it ends with a nil pointer.
