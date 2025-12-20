@@ -24,4 +24,8 @@ func main() {
 	// This makes method calls more convenient and less error-prone.
 	// you are not supposed to define same method with both pointer and value receivers on the same type
 	// it makes go confused about which method to call
+	//L-Value , R-value
+	// L-value works with pointer receiver but r value does not eg:Point{10,20}.PointerReceiver() will throw an error
+	// R-value works with value receiver eg: Point{10,20}.ValueReceiver() works fine
+	// a struct implementing a pointer receiver should have all of its methods defined with pointer receivers to avoid confusion and ensure consistent behavior.
 }
