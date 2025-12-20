@@ -29,3 +29,12 @@ func main() {
 	// R-value works with value receiver eg: Point{10,20}.ValueReceiver() works fine
 	// a struct implementing a pointer receiver should have all of its methods defined with pointer receivers to avoid confusion and ensure consistent behavior.
 }
+
+// method values
+// func (p point) Distance(q point) float64 {
+// 	return math.Sqrt((p.x - q.x)*(p.x - q.x) + (p.y - q.y)*(p.y - q.y))	
+// }
+// p:= point{10,20}
+// d1 := p.Distance
+// q:= point{30,40}
+// fmt.Println("Distance:",d1(q)) // calls p.Distance(q)
