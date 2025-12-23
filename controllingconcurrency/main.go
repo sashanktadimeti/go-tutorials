@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"sync"
 	"time"
 )
 
@@ -16,19 +15,20 @@ var (
 
 func main() {
 	queue := make(chan bool, concurrencyLevel)
-	var wg sync.WaitGroup
+	// var wg sync.WaitGroup
 	for _, id := range requestIds {
 		queue <- true
-		wg.Add(1)
+		fmt.Println("sashankid:", id)
+		// wg.Add(1)
 		go func(id int) {
 			defer func() {
 				<-queue
 			}()
-			defer wg.Done()
+			// defer wg.Done()
 			makerequest(id)
 		}(id)
 	}
-	wg.Wait()
+	// wg.Wait()
 	// for i:=0;i<concurrencyLevel;i++ { 
 	// 	queue<-true
 	// }  fix with a for loop
